@@ -1,0 +1,27 @@
+<google-map center="map.center" zoom="map.zoom" draggable="true">
+  <div ng-repeat="skimmer in skimmers">
+    <marker coords="skimmer.latLong"></marker>
+  </div>
+</google-map>
+
+<div ng-repeat="skimmer in skimmers" class="row">
+  <div class="col-md-4">
+    {{skimmer.call}}
+  </div>
+
+  <div class="col-md-2">
+    {{skimmer.grid}}
+  </div>
+
+  <div class="col-md-2">
+    {{skimmer.fst_age}}
+  </div>
+
+  <div class="col-md-2">
+    {{skimmer.lst_age}}
+  </div>
+
+  <div class="col-md-2">
+    {{skimmer.latLong}}
+  </div>
+</div>

@@ -1,4 +1,10 @@
 .angular-google-map-container {
   height: 400px;
   width: 100%;
+  margin: 10px 0 10px 0;
+}
+
+.filters {
+  padding: 5px;
+  border: 1px solid #aaa;
 }

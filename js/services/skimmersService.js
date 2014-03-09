@@ -19,7 +19,8 @@ beaconApp.factory("skimmersService", function($http) {
 
             //some grid locators are equal callsign
               if (value.grid != value.call) {
-                value.latLong = convertToLatLong(value.grid)
+                value.latLong       = convertToLatLong(value.grid)
+                value.formattedBand = value.band_m.join()
               }
             }, this)
 

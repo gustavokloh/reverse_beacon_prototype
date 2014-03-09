@@ -43,11 +43,29 @@
 </div>
 
 <google-map center="map.center" zoom="map.zoom" draggable="true">
-  <div ng-repeat="skimmer in skimmers | filter: searchparam">
-    <marker coords="skimmer.latLong"
-            icon="'images/radio.png'">
-    </marker>
-  </div>
+  <marker ng-repeat="skimmer in skimmers | filter: searchparam"
+          coords="skimmer.latLong"
+          icon="'images/radio.png'">
+
+    <window coords="skimmer.latLong">
+      <div class="marker-info">
+        <p>Callsign: <strong>{{skimmer.call}}</strong> / Grid: <strong>{{skimmer.grid}}</strong></p>
+        <p>Bands: <strong>{{skimmer.formattedBand}}</strong></p>
+
+        <hr>
+
+        <p>Status: <strong>{{skimmer.lst_age}}</strong></p>
+        <p>on RBN since: <strong>{{skimmer.fst_age}}</strong></p>
+
+        <hr>
+
+        <p>Skimmer version: <strong>{{skimmer.sk_ver}}</strong></p>
+        <p>Aggregator version: <strong>{{skimmer.ag_ver}}</strong></p>
+        <p>{{skimmer.sk_opt}}</p>
+      </div>
+    </window>
+  </marker>
+
 </google-map>
 
 <div ng-repeat="skimmer in skimmers | filter: searchparam" class="row">
